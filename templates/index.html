@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Task Manager</title>
+</head>
+<body class="gradient-custom">
+    <div class="container">
+        <h1>Task Manager</h1>
+        <form action="{{ url_for('create_task') }}" method="post">
+            <input type="text" name="content" placeholder="Enter task..." required>
+            <button type="submit">Create Task</button>
+        </form>
+        <div class="task-list">
+            <ul class="tabs">
+                <li><a href="{{ url_for('index') }}" class="{{ 'active' if request.endpoint == 'index' else '' }}">All Tasks</a></li>
+                <li><a href="{{ url_for('completed_tasks') }}" class="{{ 'active' if request.endpoint == 'completed_tasks' else '' }}">Completed Tasks</a></li>
+                <li><a href="{{ url_for('active_tasks') }}" class="{{ 'active' if request.endpoint == 'active_tasks' else '' }}">Active Tasks</a></li>
+            </ul>
+
+            <h2>{% block task_list_heading %}{% endblock %}</h2>
+            <ul>
+                {% for task in tasks %}
+                <div class="task-container">
+                    <li {% if task.completed %}class="completed-task"{% endif %}>
+                        <input type="checkbox" {% if task.completed %}checked{% endif %}
+                               onclick="window.location.href='{{ url_for('complete_task', task_id=task.id) }}'">
+                        {{ task.content }}
+                    </li>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
