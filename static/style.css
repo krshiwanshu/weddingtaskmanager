@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 70%;
+}
+
+button {
+  background-color: #B2D7B2; /* Light blue color */
+  padding: 10px 10px; /* Adjust padding as needed */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add rounded corners */
+  color: #333; /* Text color */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+.task-list {
+    margin-top: 10px;
+    overflow-y: auto;
+    max-height: 370px;
+}
+
+.task-list::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+.task-list::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+
+}
+
+.task-list::-webkit-scrollbar-track {
+    background-color: #eee; /* Color of the scrollbar track */
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.task-list h2 {
+    margin: 0; /* Add this line to remove default margin */
+}
+
+.tabs li {
+    margin-right: 10px;
+}
+
+.tabs a {
+    text-decoration: none;
+    margin: 0;
+    padding: 8px 5px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+
+
+.tabs a:hover {
+    background-color: #ffe1dc;
+}
+
+.completed-task {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.header-gradient {
+    background-image: linear-gradient(to bottom, #f7f7f7 0%, #eee 100%);
+}
+.main-gradient {
+    background-image: linear-gradient(to right, #f2f2f2 0%, #fff 100%);
+}
+
+.gradient-custom {
+  background: radial-gradient(50% 123.47% at 50% 50%, #00ff94 0%, #720059 100%),
+    linear-gradient(121.28deg, #669600 0%, #ff0000 100%),
+    linear-gradient(360deg, #0029ff 0%, #8fff00 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #6100ff 0%, #00ff57 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #fff500 0%, #51d500 100%);
+  background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px; /* Adjust spacing as needed */
+    border: 1px solid #eee; /* Optional border */
+    border-radius: 5px; /* Optional rounded corners */
+    padding: 2px; /* Adjust padding as needed */
+    background-color: #fff; /* Set a background color for better visibility */
+}
+
+.task-container li {
+    flex: 1; /* Expand content area to fill remaining space */
+}
+
+.delete-button {
+    border: 1px solid; /* Remove default border */
+    border-radius: 5px;
+    background-color: transparent; /* No background color */
+    color: #ff9999; /* Adjust color as needed */
+    cursor: pointer; /* Indicate clickable behavior */
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+
