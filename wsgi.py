@@ -1,6 +1,5 @@
-from .app import app as application
+from .app import app
 
 
 if __name__ == "__main__":
-    from werkzeug.serving import run_with_reloader
-    run_with_reloader(application)
+    app.run()
